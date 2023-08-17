@@ -1,10 +1,11 @@
 import { Sequelize } from "sequelize";
+import "dotenv/config";
 
-const connection = new Sequelize({
+export const connection = new Sequelize({
   dialect: "mysql",
-  database: "ticriticam",
-  username: "root",
-  password: "Vu3toreact..",
+  database: process.env.DB_NAME,
+  username: process.env.DB_USER,
+  password: process.env.DB_PWD,
 });
 
 async function connect() {
